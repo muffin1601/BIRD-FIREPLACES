@@ -54,7 +54,6 @@
 
 .accentText {
   color: var(--accent-gold);
-  font-style: italic;
   font-family: var(--font-serif);
 }
 
