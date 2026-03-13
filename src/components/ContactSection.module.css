@@ -1,0 +1,188 @@
+.contactSection {
+  background: #fff;
+  padding: 10rem 0;
+  color: #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.smallLabel {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.3rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.accentTitle {
+  font-style: italic;
+  color: var(--accent-orange);
+}
+
+.headerDesc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 6rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.formGroup input, .formGroup select, .formGroup textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border: none;
+  color: #353535;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  border: 1px solid #d6d6d6;
+  outline: none;
+}
+
+.formGroup input::placeholder, .formGroup textarea::placeholder {
+  color: #444;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--accent-orange);
+  color: #fff;
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+.showroomTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-orange);
+}
+
+.infoLabel {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--accent-orange);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.infoItem p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.hoursCard {
+  background: #fcfcfc;
+  border: 1px solid #efefef;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.hoursLabel {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  color: var(--accent-orange);
+  display: block;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
