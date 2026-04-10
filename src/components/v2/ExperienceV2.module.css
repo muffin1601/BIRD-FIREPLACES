@@ -1,0 +1,130 @@
+.expSection {
+  position: relative;
+  padding: 15rem 5%;
+  background: #000;
+  overflow: hidden;
+  color: #fff;
+}
+
+.bgGrain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.floatingTag {
+    color: var(--v2-primary);
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    margin-bottom: 2rem;
+    display: inline-block;
+    border-left: 2px solid var(--v2-primary);
+    padding-left: 1rem;
+}
+
+.title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 3rem;
+}
+
+.orangeText {
+    color: var(--v2-primary);
+    text-shadow: 0 0 30px var(--v2-primary-glow);
+}
+
+.desc {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4rem;
+    max-width: 500px;
+}
+
+.stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.statItem h3 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.statItem p {
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    color: var(--v2-primary);
+    text-transform: uppercase;
+}
+
+.rightContent {
+    position: relative;
+    height: 100%;
+}
+
+.imageFeatured {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: #111;
+    overflow: hidden;
+    box-shadow: 0 100px 100px rgba(0,0,0,0.8);
+}
+
+.img {
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.overlayText {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 107, 53, 0.3);
+    pointer-events: none;
+}
+
+.massiveText {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+        gap: 8rem;
+    }
+    .overlayText {
+        font-size: 3rem;
+        bottom: -20px;
+        right: -20px;
+    }
+}

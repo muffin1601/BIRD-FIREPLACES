@@ -1,0 +1,84 @@
+.section {
+    padding: 10rem 0;
+    background: #000;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    margin-bottom: 6rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    color: #ff5722;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 200;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.card {
+    position: relative;
+    padding-top: 2rem;
+}
+
+.number {
+    display: block;
+    font-family: serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.cardDesc {
+    font-size: 1rem;
+    color: #888;
+    line-height: 1.8;
+}
+
+.borderLine {
+    height: 1px;
+    background: linear-gradient(to right, #ff5722, transparent);
+    width: 60px;
+    margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+}

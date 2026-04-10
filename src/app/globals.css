@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
 
 :root {
   --background: #000000;
@@ -8,9 +8,20 @@
   --text-muted: rgba(255, 255, 255, 0.8);
   --text-dim: rgba(255, 255, 255, 0.6);
   --border-dim: rgba(255, 255, 255, 0.1);
-  --font-serif: 'Roboto', sans-serif;
-  --font-display: 'Roboto', sans-serif;
-  --font-sans: 'Roboto', sans-serif;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --gradient-primary: linear-gradient(135deg, #c5a059 0%, #ff6b35 100%);
+  --font-serif: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* V2 Specific - High Luxury Orange */
+  --v2-primary: #ff6b35;
+  --v2-primary-glow: rgba(255, 107, 53, 0.3);
+  --v2-bg: #080808;
+  --v2-surface: #121212;
+  --v2-border: rgba(255, 107, 53, 0.15);
+  --v2-text: #ffffff;
 }
 
 * {

@@ -1,0 +1,102 @@
+.section {
+  padding: 8rem 0;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+.card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.meta {
+    flex: 1;
+}
+
+.id {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--v2-primary);
+    letter-spacing: 0.5em;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 0.8;
+}
+
+.imgWrapper {
+    flex: 2;
+    position: relative;
+    aspect-ratio: 21/9;
+    overflow: hidden;
+    background: #080808;
+}
+
+.img {
+    object-fit: cover;
+    filter: brightness(0.6) contrast(1.2) grayscale(0.5);
+    transition: all 1s ease;
+}
+
+.vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inset 0 0 100px #000;
+    box-shadow: inset 0 0 200px #000;
+}
+
+.dataLabel {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--v2-primary);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+/* Hover */
+.card:hover .img {
+    filter: brightness(1) contrast(1) grayscale(0);
+    transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+    .card, .card:nth-child(even) {
+        flex-direction: column-reverse;
+        gap: 4rem;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .imgWrapper {
+        aspect-ratio: 16/9;
+    }
+}

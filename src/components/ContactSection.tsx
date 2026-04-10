@@ -63,7 +63,7 @@ const ContactSection = () => {
               <div className={styles.infoIcon}><Phone size={18} strokeWidth={1.5} /></div>
               <div>
                 <span className={styles.infoLabel}>PHONE</span>
-                <p>09999849999</p>
+                {/* <p>09999849999</p> */}
                 <p>+91 9999849999</p>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './FireplaceCollection.module.css';
 
 const FIREPLACES = [
@@ -86,33 +87,43 @@ const FireplaceCollection = () => {
           ))}
         </div>
 
-        <div className={styles.fireplaceGrid}>
-          {filteredFireplaces.map(fire => (
-            <div key={fire.id} className={styles.fireplaceCard}>
-              <div className={styles.cardImageWrapper}>
-                 <Image 
-                   src={fire.image} 
-                   alt={fire.name} 
-                   fill 
-                   style={{ objectFit: 'cover' }}
-                 />
-                 <div className={styles.cardBadge}>{fire.category}</div>
-                 <div className={styles.cardFeatured}>✧ Featured</div>
-              </div>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardName}>{fire.name}</h3>
-                <p className={styles.cardDesc}>{fire.description}</p>
-                <div className={styles.cardTags}>
-                  {fire.tags.map(tag => (
-                    <span key={tag} className={styles.tag}>{tag}</span>
-                  ))}
-                  <span className={styles.tagMore}>+2 more</span>
+        <motion.div layout className={styles.fireplaceGrid}>
+          <AnimatePresence mode='popLayout'>
+            {filteredFireplaces.map((fire, i) => (
+              <motion.div 
+                key={fire.id} 
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={styles.fireplaceCard}
+              >
+                <div className={styles.cardImageWrapper}>
+                   <Image 
+                     src={fire.image} 
+                     alt={fire.name} 
+                     fill 
+                     style={{ objectFit: 'cover' }}
+                   />
+                   <div className={styles.cardBadge}>{fire.category}</div>
+                   <div className={styles.cardFeatured}>✧ Featured</div>
                 </div>
-                <button className={styles.learnMoreBtn}>Learn More</button>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardName}>{fire.name}</h3>
+                  <p className={styles.cardDesc}>{fire.description}</p>
+                  <div className={styles.cardTags}>
+                    {fire.tags.map(tag => (
+                      <span key={tag} className={styles.tag}>{tag}</span>
+                    ))}
+                    <span className={styles.tagMore}>+2 more</span>
+                  </div>
+                  <button className={styles.learnMoreBtn}>Learn More</button>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

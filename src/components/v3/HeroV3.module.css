@@ -1,0 +1,113 @@
+.heroWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #000; /* Darkened as requested */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ambientLight {
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    width: 60%;
+    height: 40%;
+    background: radial-gradient(circle, var(--v2-primary-glow) 0%, transparent 70%);
+    filter: blur(60px);
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.imageFrame {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.heroImg {
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.textOverlay {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    padding: 6rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.label {
+    font-size: 0.75rem;
+    letter-spacing: 0.6em;
+    color: var(--v2-primary);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    display: block;
+}
+
+.title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 200;
+    line-height: 0.95;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.title span {
+    font-weight: 900;
+    color: var(--v2-primary);
+    text-shadow: 0 0 40px var(--v2-primary-glow);
+}
+
+.desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    max-width: 450px;
+}
+
+.cta {
+    background: var(--v2-primary);
+    color: #000;
+    border: none;
+    padding: 1.5rem 3.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--v2-primary-glow);
+}
+
+@media (max-width: 1024px) {
+    .imageFrame {
+        width: 100%;
+        opacity: 0.3;
+    }
+    .textOverlay {
+        background: transparent;
+        padding: 0;
+    }
+}

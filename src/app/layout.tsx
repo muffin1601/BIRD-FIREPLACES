@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import DesignSwitcher from "@/components/DesignSwitcher";
 
 export const metadata: Metadata = {
   title: "Bird Fireplaces | Premium Hearth Solutions",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <DesignSwitcher />
       </body>
     </html>
   );
