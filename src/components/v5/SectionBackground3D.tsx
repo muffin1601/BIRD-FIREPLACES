@@ -5,7 +5,15 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 
-const VariedShape = ({ position, color, scale = 1, speed = 1, type = "dodecahedron" }) => {
+interface VariedShapeProps {
+    position: [number, number, number];
+    color: string;
+    scale?: number;
+    speed?: number;
+    type?: string;
+}
+
+const VariedShape = ({ position, color, scale = 1, speed = 1, type = "dodecahedron" }: VariedShapeProps) => {
     const meshRef = useRef<THREE.Mesh>(null);
 
     useFrame((state) => {
@@ -35,7 +43,11 @@ const VariedShape = ({ position, color, scale = 1, speed = 1, type = "dodecahedr
     );
 };
 
-const SectionBackground3D = ({ color = "#d35400" }) => {
+interface SectionBackground3DProps {
+    color?: string;
+}
+
+const SectionBackground3D = ({ color = "#d35400" }: SectionBackground3DProps) => {
     const shapes = useMemo(() => [
         { pos: [-10, 6, -5], scale: 2.5, type: "dodecahedron", speed: 0.4 },
         { pos: [12, -4, -2], scale: 1.5, type: "octahedron", speed: 0.7 },
