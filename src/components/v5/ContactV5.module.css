@@ -1,0 +1,196 @@
+.contactSection {
+  min-height: 100vh;
+  position: relative;
+  background: var(--v5-bg);
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--v5-border);
+  padding: 5rem;
+  border-radius: 4px;
+}
+
+.label {
+  color: var(--v5-primary);
+  letter-spacing: 0.5em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--v5-accent);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  max-width: 450px;
+  margin-bottom: 4rem;
+  line-height: 1.8;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  outline: none;
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.inputGroup input:focus + .line,
+.inputGroup textarea:focus + .line {
+  background: var(--v5-primary);
+  box-shadow: 0 0 15px var(--v5-glow);
+}
+
+.submitBtn {
+  margin-top: 2rem;
+  background: transparent;
+  border: 1px solid var(--v5-primary);
+  color: var(--v5-primary);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.submitBtn:hover {
+  background: var(--v5-primary);
+  color: #000;
+  box-shadow: 0 0 40px var(--v5-glow);
+}
+
+.infoSide {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--v5-primary);
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.3em;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.infoText p {
+  font-size: 1.2rem;
+  color: var(--v5-accent);
+  font-weight: 300;
+}
+
+.availabilityCard {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 3rem;
+  margin-top: 2rem;
+}
+
+.availabilityCard h3 {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--v5-primary);
+  margin-bottom: 2rem;
+}
+
+.statusRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+  .glassCard { padding: 3rem 2rem; }
+}

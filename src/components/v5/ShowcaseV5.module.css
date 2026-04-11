@@ -1,0 +1,159 @@
+.uniqueShowcase {
+  background: #000;
+  padding: 10rem 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.label {
+  color: var(--v5-primary);
+  letter-spacing: 0.8em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--v5-accent);
+  letter-spacing: -0.02em;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  perspective: 2000px;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--v5-primary);
+  transform: translateY(-10px) rotateX(2deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.imageBox {
+  position: relative;
+  aspect-ratio: 16/9;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.pImg {
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.projectCard:hover .pImg {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.cardId {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--v5-primary);
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pTitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--v5-accent);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.specLine {
+  width: 40px;
+  height: 1px;
+  background: var(--v5-primary);
+}
+
+.specList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.pDesc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  min-height: 80px;
+}
+
+.viewBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.viewBtn:hover {
+  background: var(--v5-primary);
+  border-color: var(--v5-primary);
+  color: #000;
+}
+
+@media (max-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 2rem; }
+  .mainTitle { font-size: 2.5rem; }
+}

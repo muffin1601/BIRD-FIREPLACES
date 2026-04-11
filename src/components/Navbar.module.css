@@ -41,7 +41,7 @@
 
 .navLinks a {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 }
 
 .logoImg {
-  height: 45px;
+  height: 65px;
   width: auto;
   object-fit: contain;
   transition: all 0.3s ease;
@@ -101,4 +101,86 @@
   .logoImg {
     height: 35px;
   }
+}
+
+/* Premium Menu Overlay */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050505;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.menuContent {
+  text-align: center;
+  width: 100%;
+}
+
+.menuList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menuItem {
+  overflow: hidden;
+}
+
+.menuLink {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.02em;
+}
+
+.menuLink:hover {
+  color: var(--v5-primary, #ff4d00);
+  transform: skewX(-5deg) translateX(20px);
+}
+
+.menuClose {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menuClose:hover {
+  background: #fff;
+  color: #000;
+}
+
+.menuBgText {
+  position: absolute;
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(255,255,255,0.02);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
 }

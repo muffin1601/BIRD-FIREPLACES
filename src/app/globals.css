@@ -15,13 +15,16 @@
   --font-display: 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
 
-  /* V2 Specific - High Luxury Orange */
-  --v2-primary: #ff6b35;
-  --v2-primary-glow: rgba(255, 107, 53, 0.3);
-  --v2-bg: #080808;
-  --v2-surface: #121212;
-  --v2-border: rgba(255, 107, 53, 0.15);
   --v2-text: #ffffff;
+
+  /* V5 Specific - Deep Dark Orange Luxury */
+  --v5-bg: #050505;
+  --v5-primary: #d35400;
+  --v5-secondary: #c5a059;
+  --v5-accent: #ffffff;
+  --v5-surface: #0a0a0a;
+  --v5-border: rgba(211, 84, 0, 0.1);
+  --v5-glow: rgba(211, 84, 0, 0.2);
 }
 
 * {

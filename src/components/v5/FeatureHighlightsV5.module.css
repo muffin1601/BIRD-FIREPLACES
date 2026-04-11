@@ -1,0 +1,140 @@
+.section {
+  height: 400vh; /* Long scroll to allow switching */
+  position: relative;
+  background: #000;
+}
+
+.stickyContainer {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  color: var(--v5-primary);
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  background: rgba(255, 255, 255, 0.01);
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+
+.item.active {
+  border-color: var(--v5-primary);
+  background: rgba(255, 107, 53, 0.05);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.iconBox {
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
+}
+
+.active .iconBox {
+  color: var(--v5-primary);
+  transform: scale(1.1);
+}
+
+.item h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.item p {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.active p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.visualDisplay {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.hologramCard {
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 107, 53, 0.03);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.hologramIcon {
+  color: var(--v5-primary);
+  transform: scale(2);
+  margin-bottom: 3rem;
+}
+
+.hologramGlow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--v5-glow), transparent 70%);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.hologramTitle {
+  color: var(--v5-primary);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: 1fr; }
+  .visualDisplay { display: none; }
+}
