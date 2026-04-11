@@ -8,7 +8,11 @@ import * as THREE from 'three';
 import styles from './ExperienceV5.module.css';
 import SectionBackground3D from './SectionBackground3D';
 
-const ThermalCloud = ({ count = 2000 }) => {
+interface ThermalCloudProps {
+    count?: number;
+}
+
+const ThermalCloud = ({ count = 2000 }: ThermalCloudProps) => {
     const points = useMemo(() => {
         const p = new Float32Array(count * 3);
         for (let i = 0; i < count; i++) {

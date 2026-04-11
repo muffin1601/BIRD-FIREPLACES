@@ -4,6 +4,7 @@ import React, { useState, useRef, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei';
+import * as THREE from 'three';
 import styles from './MaterialsV5.module.css';
 import SectionBackground3D from './SectionBackground3D';
 
@@ -14,7 +15,19 @@ const MATERIALS = [
     { id: 4, name: "Arctic Quartz", color: "#d0e0ff", distort: 0.4, pos: [3, -2, 0] }
 ];
 
-const MaterialOrb = ({ material, isActive, onHover }) => {
+interface MaterialOrbProps {
+    material: {
+        id: number;
+        name: string;
+        color: string;
+        distort: number;
+        pos: number[];
+    };
+    isActive: boolean;
+    onHover: (material: any) => void;
+}
+
+const MaterialOrb = ({ material, isActive, onHover }: MaterialOrbProps) => {
     const meshRef = useRef<THREE.Mesh>(null);
     
     useFrame((state) => {

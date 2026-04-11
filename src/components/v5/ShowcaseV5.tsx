@@ -36,7 +36,18 @@ const PROJECTS = [
     }
 ];
 
-const ProjectCard = ({ proj, index }) => {
+interface ProjectCardProps {
+    proj: {
+        id: string;
+        title: string;
+        image: string;
+        specs: string[];
+        desc: string;
+    };
+    index: number;
+}
+
+const ProjectCard = ({ proj, index }: ProjectCardProps) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
