@@ -1,0 +1,150 @@
+.section {
+  width: 100%;
+  height: 30vh;
+  min-height: 500px;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background Logic */
+.bgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.videoCol {
+  flex: 0 0 70%; /* Takes 70% of the space as in the snippet col-md-7 */
+  position: relative;
+}
+
+.videoCol::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000);
+  z-index: 2;
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* Content Layout */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end; /* Align content to the right side (black area) */
+}
+
+.textContent {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* Premium Button from design system */
+.button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  display: inline-block;
+  align-self: flex-start;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  border-color: #d35400;
+  background: rgba(211, 84, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.ctaGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(211, 84, 0, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.button:hover .ctaGlow {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .videoCol {
+    flex: 0 0 100%;
+  }
+  .videoCol::after {
+    width: 100%;
+    background: linear-gradient(to top, #000, transparent);
+  }
+  .container {
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .textContent {
+    text-align: center;
+    align-items: center;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}

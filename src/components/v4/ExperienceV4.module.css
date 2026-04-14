@@ -1,102 +1,143 @@
 .section {
-  padding: 8rem 0;
+  position: relative;
+  width: 100%;
+  height: 300vh;
   background: #000;
-  color: #fff;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.grid {
   display: flex;
   flex-direction: column;
-  gap: 15rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 85%;
+  max-width: 1500px; /* Decreased width for luxurious feel */
+  align-items: center;
+  padding-top: 5rem;
 }
 
 .card {
+  background: rgba(0, 0, 0, 0.507); /* Light neutral tint for frosted look */
+  backdrop-filter: blur(140px); /* Realistic frosted blur */
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  border-radius: 30px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  height: 70vh; /* More compact height */
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+  border-color: rgba(211, 84, 0, 0.3);
+  background: rgba(0, 0, 0, 0.199);
+  transform: translateY(-10px);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10%;
+  gap: 1rem;
 }
 
-.card:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.meta {
-    flex: 1;
-}
-
-.id {
-    font-family: monospace;
-    font-size: 0.7rem;
-    color: var(--v2-primary);
-    letter-spacing: 0.5em;
-    display: block;
-    margin-bottom: 2rem;
+.tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.6;
 }
 
 .title {
-    font-size: 5rem;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    line-height: 0.8;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
 }
 
-.imgWrapper {
-    flex: 2;
-    position: relative;
-    aspect-ratio: 21/9;
-    overflow: hidden;
-    background: #080808;
+.logoArea {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.img {
-    object-fit: cover;
-    filter: brightness(0.6) contrast(1.2) grayscale(0.5);
-    transition: all 1s ease;
+.iconWrapper {
+  width: 8rem; /* Smaller, more elegant icons */
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--v5-primary, #d35400);
+  filter: drop-shadow(0 0 40px rgba(211, 84, 0, 0.25));
+  transition: transform 0.5s ease;
 }
 
-.vignette {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inset 0 0 100px #000;
-    box-shadow: inset 0 0 200px #000;
+.card:hover .iconWrapper {
+  transform: scale(1.1);
 }
 
-.dataLabel {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-family: monospace;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--v2-primary);
-    text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+.iconWrapper svg {
+  width: 100%;
+  height: 100%;
 }
 
-/* Hover */
-.card:hover .img {
-    filter: brightness(1) contrast(1) grayscale(0);
-    transform: scale(1.02);
+.description {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-weight: 300;
 }
 
 @media (max-width: 1024px) {
-    .card, .card:nth-child(even) {
-        flex-direction: column-reverse;
-        gap: 4rem;
-    }
-    .title {
-        font-size: 3rem;
-    }
-    .imgWrapper {
-        aspect-ratio: 16/9;
-    }
+  .cardGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow-y: auto;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .card {
+    height: auto;
+    margin-top: 0 !important;
+  }
 }

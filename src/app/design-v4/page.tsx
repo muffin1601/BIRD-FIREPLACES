@@ -1,14 +1,16 @@
 import Navbar from '@/components/Navbar';
 import HeroV4 from '@/components/v4/HeroV4';
-import FeatureHighlightsV4 from '@/components/v4/FeatureHighlightsV4';
 import ExperienceV4 from '@/components/v4/ExperienceV4';
-import ShowcaseV4 from '@/components/v4/ShowcaseV4';
-import QuoteV4 from '@/components/v4/QuoteV4';
-import MaterialsV4 from '@/components/v4/MaterialsV4';
-import ContactSection from '@/components/ContactSection';
+import RangeSelectorV4 from '@/components/v4/RangeSelectorV4';
+import ClientMarqueeV4 from '@/components/v4/ClientMarqueeV4';
+import FireCategoryV4 from '@/components/v4/FireCategoryV4';
 import ScrollObserver from '@/components/ScrollObserver';
 import SmoothScroll from '@/components/SmoothScroll';
-import Footer from '@/components/Footer';
+import ParallaxFeatureV4 from '@/components/v4/ParallaxFeatureV4';
+import LookbookV4 from '@/components/v4/LookbookV4';
+import ARSectionV4 from '@/components/v4/ARSectionV4';
+import ContactV4 from '@/components/v4/ContactV4';
+import FooterV4 from '@/components/v4/FooterV4';
 
 export default function DesignV4() {
   return (
@@ -22,30 +24,38 @@ export default function DesignV4() {
       </div>
 
       <div className="reveal">
-        <FeatureHighlightsV4 />
-      </div>
-
-      <div className="reveal">
-        <QuoteV4 />
-      </div>
-
-      <div className="reveal">
         <ExperienceV4 />
       </div>
 
       <div className="reveal">
-        <ShowcaseV4 />
+        <RangeSelectorV4 />
       </div>
 
       <div className="reveal">
-        <MaterialsV4 />
+        <ClientMarqueeV4 />
+      </div>
+
+      <div className="reveal">
+        <FireCategoryV4 />
+      </div>
+
+      <div className="reveal">
+        <ParallaxFeatureV4 />
+      </div>
+
+      <div className="reveal">
+        <LookbookV4 />
+      </div>
+
+      <div className="reveal">
+        <ARSectionV4 />
       </div>
 
       <div id="contact" className="reveal">
-        <ContactSection />
+        <ContactV4 />
       </div>
 
-      <Footer />
+      <FooterV4 />
     </main>
   );
 }
